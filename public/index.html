@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome V Class Room</title>
+    <title>We Classroom</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/8.6.1/firebase-app.js"></script>
@@ -23,49 +30,174 @@
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     
   </head>
-  <body>
+  <body onload="startTime()">
+    <!-- nav bar #7952b3; logo textcolor: e5e5e5, logo bg:#92e27e-->
+    <nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #92e27e;">
+      <div class="container-fluid">
 
+        <a class="navbar-brand" href="#">
+          <img src="we-logo.svg" alt="" width="42" height="24" class="d-inline-block align-text-top">
+          Classroom
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" aria-disabled="true" href="#">การบ้าน</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" aria-disabled="true" href="#">แบบฝึกหัด</a>
+            </li>
+            <!--
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+            -->
+          </ul>
+          <!--
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          -->
+        </div>
+      
+      </div>
+    </nav>
+
+    <!-- header #7952b3 -->
+    <div id="spacing-1" class="container" style="background-color: #7b7eb7; height: 10px;"></div>
+    <div id="spacing-1" style="height: 10px;"></div>
+    <span> BYS GIP 2/1 Online-Classroom : <span id="txt"></span></span>
+    <div id="spacing-1" style="height: 10px;"></div>
     
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!-- time table -->
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <caption>GIP P2/1 Linked Zoom (Final) V.4 copy.pdf</caption>
+        <thead>
+          <tr class="align-top text-white" style="background-color:#80c2ce;"> 
+            <th scope="col">Day/Time</th>
+            <th scope="col"><div>Period 1</div><div>07.50-08.25</div></th>
+            <th scope="col"><div>Period 2</div><div>08.40-09.15</div></th>
+            <th scope="col"><div>Period 3</div><div>09.30-10.05</div></th>
+            <th scope="col"><div>Period 4</div><div>10.20-10.55</div></th>
+            <th scope="col"><div>Period 5</div><div>10.55-12.00</div></th>
+            <th scope="col"><div>Period 6</div><div>12.00-12.35</div></th>
+            <th scope="col"><div>Period 7</div><div>12.50-13.25</div></th>
+            <th scope="col"><div>Period 8</div><div>13.40-14.15</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Monday</th>
+            <td><a href="https://us04web.zoom.us/j/7517657728?pwd=alJQa3JSRm1vbjduZThiMTdnN2VRdz09">Thai Language</a></td>
+            <td><a href="https://us04web.zoom.us/j/4315385776?pwd=QVQrSGM4bk9lUFFUN2IrTlZjM3RCZz09">Occupation</a></td>
+            <td><a href="https://us05web.zoom.us/j/7599334663?pwd=YXlMUHpYQ1M4UEdDZEJsdWsrdDhEZz09">Music</a></td>
+            <td><a href="https://us04web.zoom.us/j/8580460978?pwd=czJNNU9RMTR1b0M5c05MSi94dE83Zz09">English Communication</a></td>
+            <td>Lunch</td>
+            <td><a href="https://us04web.zoom.us/j/5314571644?pwd=NEdLZk1lYld4aFpKZkNUcVNBaExYUT09">Math</a></td>
+            <td><a href="https://us05web.zoom.us/j/3845446519?pwd=VGpWUktiSmRWR3p3MmhIY20xWVM3UT09">English Language</a></td>
+            <td><a href="https://us05web.zoom.us/j/4773086860?pwd=OFc2UndZSTB2andwWU5jUGJFamFDUT09">Science</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Tuesday</th>
+            <td><a href="https://us05web.zoom.us/j/3845446519?pwd=VGpWUktiSmRWR3p3MmhIY20xWVM3UT09">English Language</a></td>
+            <td><a href="https://us05web.zoom.us/j/5100882378?pwd=KzNOOG9FOUNaTjMyQXNwRVVsM0g3QT09%20%20Meeting">Social</a></td>
+            <td><a href="https://us05web.zoom.us/j/4773086860?pwd=OFc2UndZSTB2andwWU5jUGJFamFDUT09">Science</a></td>
+            <td><a href="https://us05web.zoom.us/j/4773086860?pwd=OFc2UndZSTB2andwWU5jUGJFamFDUT09">Science</a></td>
+            <td>Lunch</td>
+            <td><a href="https://us04web.zoom.us/j/5314571644?pwd=NEdLZk1lYld4aFpKZkNUcVNBaExYUT09">Math</a></td>
+            <td><a href="https://us04web.zoom.us/j/8580460978?pwd=czJNNU9RMTR1b0M5c05MSi94dE83Zz09">English Communication</a></td>
+            <td><a href="https://us04web.zoom.us/j/7517657728?pwd=alJQa3JSRm1vbjduZThiMTdnN2VRdz09">Thai Language</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Wednesday</th>
+            <td><a href="https://us04web.zoom.us/j/5931347080?pwd=__5DR9dCEdQ3ZsU6xARvnhUoYXk">Science</a></td>
+            <td><a href="https://us04web.zoom.us/j/5314571644?pwd=NEdLZk1lYld4aFpKZkNUcVNBaExYUT09">Math</a></td>
+            <td></td>
+            <td><a href="https://us04web.zoom.us/j/7938153054?pwd=K1hucGhUNzZld1dnYWFMT3R6ZEhFdz09">MAD SCIENCE</a></td>
+            <td>Lunch</td>
+            <td><a href="https://us04web.zoom.us/j/7517657728?pwd=alJQa3JSRm1vbjduZThiMTdnN2VRdz09">Thai Language</a></td>
+            <td><a href="https://us05web.zoom.us/j/3845446519?pwd=VGpWUktiSmRWR3p3MmhIY20xWVM3UT09">English Language</a></td>
+            <td><a href="https://us05web.zoom.us/j/2791197276?pwd=R0RpYWhTR3hWRUxQZzVNbzlzREIrZz09">Chinese Language</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Thursday</th>
+            <td><a href="https://us04web.zoom.us/j/5314571644?pwd=NEdLZk1lYld4aFpKZkNUcVNBaExYUT09">Math</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Lunch</td>
+            <td><a href="https://us04web.zoom.us/j/8366283853?pwd=WkFMZ2VDWGZmbVNEby9EZEk5dzhLdz09">Art</a></td>
+            <td><a href="https://us05web.zoom.us/j/2791197276?pwd=R0RpYWhTR3hWRUxQZzVNbzlzREIrZz09">Chinese Language</a></td>
+            <td><a href="https://us04web.zoom.us/j/7517657728?pwd=alJQa3JSRm1vbjduZThiMTdnN2VRdz09">Thai Language</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Friday</th>
+            <td><a href="https://us05web.zoom.us/j/5100882378?pwd=KzNOOG9FOUNaTjMyQXNwRVVsM0g3QT09%20%20Meeting">Social</a></td>
+            <td><a href="https://us04web.zoom.us/j/7517657728?pwd=alJQa3JSRm1vbjduZThiMTdnN2VRdz09">Thai Language</a></td>
+            <td><a href="https://us04web.zoom.us/j/5314571644?pwd=NEdLZk1lYld4aFpKZkNUcVNBaExYUT09">Math</a></td>
+            <td><a href="https://us04web.zoom.us/j/8366283853?pwd=WkFMZ2VDWGZmbVNEby9EZEk5dzhLdz09">Helth</a></td>
+            <td>Lunch</td>
+            <td><a href="https://us05web.zoom.us/j/4773086860?pwd=OFc2UndZSTB2andwWU5jUGJFamFDUT09">Science</a></td>
+            <td><a href="https://us04web.zoom.us/j/5582535123?pwd=b2tpdU1TRzhyQmVOSUtxTGpLd2lxUT09">History</a></td>
+            <td><a href="https://us05web.zoom.us/j/3845446519?pwd=VGpWUktiSmRWR3p3MmhIY20xWVM3UT09">English Language</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+   <div class="container">ดู VDO การสอนย้อนหลัง (login ด้วย gmail ที่ teacher share ให้)</div>
+   <div class="container"><a href="https://classroom.google.com/u/0/c/MzM4NjM5ODE4MTcw/m/MzQ4NTc5NjQ5MDgw/details">Science P2/1 online Learning 25.05.2021</a></div>
+   <div class="container"><a href="https://classroom.google.com/u/0/c/MzM4NjM5ODE4MTcw/m/MzQ4MTYzMDc3NTkx/details">Science P2/1 online Learning 24.05.2021</a></div>
+
+   <div class="container"><a href="https://classroom.google.com/u/0/c/MzM4NjM5ODE4MTcw/m/MzQ5NDEzOTgxMzY0/details">Science PDF Scan-2 28.05.2021</a></div>
+   <div class="container"><a href="https://classroom.google.com/u/0/c/MzM4NjM5ODE4MTcw/p/MzUxOTk2MzA3NTQ1/details">Science PDF Scan-1 28.05.2021</a></div>
+
+    <script>
+      function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+        h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 1000);
+      }
+      function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+      }
+      </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+  
+
   </body>
 </html>
