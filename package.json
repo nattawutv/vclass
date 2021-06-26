@@ -1,0 +1,14 @@
+{
+  "name": "vclass",
+  "version": "1.0.0",
+  "description": "vclass web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nattawutv",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^8.6.1"
+  }
+}
